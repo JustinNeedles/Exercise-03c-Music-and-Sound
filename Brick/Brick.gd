@@ -31,6 +31,8 @@ var colors = [
 
 func _ready():
 	randomize()
+	var randRad = rand_range(-2 * PI, 2 * PI)
+	sway_randomizer = Vector2(cos(randRad), sin(randRad)) * sway_amplitude
 	position.x = new_position.x
 	position.y = -100
 	$Tween.interpolate_property(self, "position", position, new_position, time_appear + randf()*2, Tween.TRANS_BOUNCE, Tween.EASE_IN_OUT)
